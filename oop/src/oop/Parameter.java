@@ -1,5 +1,7 @@
 package oop;
-
+class Data{
+	int x;
+}
 public class Parameter {
 
 	public static void main(String[] args) {
@@ -18,8 +20,4 @@ public class Parameter {
 		return tmp;//x가 대입된 tmp의 주소값을 호출된 곳에 리턴한다 이후 copy스택은 제거된다
 		
 	}
-}
-
-class Data{
-	int x;
 }
