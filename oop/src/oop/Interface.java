@@ -25,12 +25,15 @@ public interface Interface { //추상 메서드의 집합, 모든 메서드의 �
 }
 
 //인터페이스의 구현 : 추상 메서드의 구현부( {} )를 완성하는것
-	class Child1 implements Interface { //다중 상속(implements)도 가능 //class Child implements Parent1, Parent2 {}
+	class Child1 implements Interface, AnotherInterface{ //인터페이스는 다중 상속(implements)도 가능
 	public void method1(){
 		System.out.println("a"); 
 		}
 	public void method2(){
 		System.out.println("b");
+		}
+	public void method3(){
+		System.out.println("c");
 		}
 	}
 
