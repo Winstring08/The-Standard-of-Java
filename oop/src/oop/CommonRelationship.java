@@ -14,7 +14,6 @@ class Red extends Color {} //Red와 Yellow 클래스는 Color를 상속받음
 class Yellow extends Color implements Common{} //또한  Yellow클래스는 Common을 구현하여 B와 공통관계를 부여
 
 
-
 public class CommonRelationship {
 void upstateBYellow(Common c) { //Common타입만 매개변수로 들어올수 있는 메서드 생성
 	if(c instanceof Universe) { 
