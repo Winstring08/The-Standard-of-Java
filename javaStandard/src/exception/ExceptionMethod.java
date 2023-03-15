@@ -1,4 +1,4 @@
-package javaStandard;
+package exception;
 
 public class ExceptionMethod {
 
