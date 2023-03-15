@@ -4,8 +4,8 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Throws {
-
 	public static void main(String[] args) {
+		System.out.println();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("텍스트 파일 생성기");
 		System.out.println("생성하고자 하는 파일명을 입력해주세요");
