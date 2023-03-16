@@ -5,6 +5,10 @@ class Data{
 public class Parameter {
 
 	public static void main(String[] args) {
+
+			System.out.println("012345".indexOf(50));
+
+	
 		Data d = new Data(); //호출스택 main생성, 변수 d공간 생성, d에 새로운 Data객체의 주소값을 넣는다
 		d.x = 10; //주소값을 통해 Data객체와 연결되어 Data객체의 변수값을 바꿀수 있다
 		Data d2 = copy(d); //main스택에 변수 d2공간을 생성하고 호출스택 copy를 올린다 (copy로 이동)
