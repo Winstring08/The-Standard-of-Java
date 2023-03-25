@@ -28,13 +28,13 @@ class MyComparator implements Comparator {
 		if (o1 instanceof Comparable && o2 instanceof Comparable) {
 			Comparable c1 = (Comparable) o1;
 			Comparable c2 = (Comparable) o2;
-			// Object타입에서 Compareable타입으로 형변환
+			// Object타입에서 Comparable타입으로 형변환
 			// String->(Object)String->(Comparable)String
 
 			return c1.compareTo(c2) * -1;
 			// Comparable타입이 되었으므로 String클래스가 구현한 compareTo()메서드 사용 가능
 			// c1자기자신과 c2를 비교하여 c1이 더 크면 양수를 반환하지만 -1을 곱했으므로 반대로 반환
-			// 이 반환방식을 sort()가 사용
+			// 이 반환방식을 sort()가 가진 compare()메서드가 사용
 		}
 		return -1; // Comparable타입으로 형변환 실패시 -1을 반환하도록 설정
 	}
