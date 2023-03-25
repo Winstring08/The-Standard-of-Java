@@ -17,7 +17,18 @@ public class TreeSetEx {
 		//저장하려는 객체가 가진 compareTo()메서드의 반환값에 따라 set이 자동 정렬됨
 		
 		System.out.println(set);
+		//[TreeSetNode [x=5], TreeSetNode [x=4], TreeSetNode [x=3], TreeSetNode [x=2], TreeSetNode [x=1]]
 		//TreeSetNode에서 구현한 compareTo()메서드에 따라 정렬
+		
+		System.out.println(set.headSet(new TreeSetNode(3)));
+		//[TreeSetNode [x=5], TreeSetNode [x=4]]
+		//정렬기준이 역순이므로 3보다 앞에 존재하는 5,4가 반환됨
+		System.out.println(set.tailSet(new TreeSetNode(3)));
+		//[TreeSetNode [x=3], TreeSetNode [x=2], TreeSetNode [x=1]]
+		//정렬기준이 역순이므로 3보다 같거나 뒤에 존재하는 3,2,1이 반환됨
+		System.out.println(set.subSet(new TreeSetNode(5),new TreeSetNode(2)));
+		//[TreeSetNode [x=5], TreeSetNode [x=4], TreeSetNode [x=3]]
+		//정렬기준이 역순이므로 시작과 끝이 반대로 되야함
 
 	}
 }
@@ -53,6 +64,4 @@ class TreeSetNode implements Comparable{ //값을 저장할 객체는 compareTo(
 	public String toString() {
 		return "TreeSetNode [x=" + x + "]";
 	}
-	
-	
 }
