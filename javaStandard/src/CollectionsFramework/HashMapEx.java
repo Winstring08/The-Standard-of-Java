@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class HashMapEx {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //로그인
 		Map m = new HashMap(); //새로운 HashMap객체 생성
 		m.put("aaa", "111");
 		m.put("bbb", "222");

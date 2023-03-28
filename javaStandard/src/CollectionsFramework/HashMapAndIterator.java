@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class HashMapAndIterator {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //학생 성적 관리
 		Map map = new HashMap();
 		map.put("갑", 90);
 		map.put("을", 80);
@@ -41,9 +41,6 @@ public class HashMapAndIterator {
 		System.out.println("최저점수 : " + Collections.min(values));
 		//max와 min의 매개변수는 comparable을 구현한 객체만 올 수 있음
 		//max와 min이 max와 min을 비교하는 compare()메서드를 가짐
-
-		
-
 		}
 		
 		
