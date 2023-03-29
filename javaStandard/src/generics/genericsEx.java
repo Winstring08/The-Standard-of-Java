@@ -40,6 +40,10 @@ public class genericsEx {
 		List<Integer> integerList = Arrays.asList(1, 2, 3); //1,2,3을 요소로 하는 List생성
 		Box.printList(integerList); 
 		//List<Integer> integerList이므로 T가 Integer라는것을 컴파일러가 추론 가능하여 생략 가능
+		
+		Box<? extends Object> box = new Box<String>();
+		Box<String> strbox = (Box<String>) box;
+	
 	}
 
 }
