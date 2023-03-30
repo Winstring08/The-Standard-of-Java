@@ -12,7 +12,7 @@ this.x = x;
 this.y = y;
 } 
 
-public int getX() { 
+public int getX() { //enum의 iv는 private이므로 변수를 사용하기 위해서 getter를 생성해야 함
 return x; //상수 객체의 x값 반환
 }
 
@@ -29,6 +29,12 @@ public class EnumEx2 {
 		
 		System.out.printf("d1의 x값 : %d, d1의 y값 : %s%n",d1.getX(),d1.getY()); 
 		System.out.printf("d2의 x값 : %d, d2의 y값 : %s%n",d2.getX(),d2.getY()); 
+		
+		Direction2[] arrD = Direction2.values(); //Direction2에 있는 모든 상수객체들을 배열로 반환
+		for(Direction2 d : arrD) { //상수배열에서 순서대로 상수를 하나씩 꺼내 반복문 실행
+			System.out.printf("%d번째값 : x=%d, y=%s%n",d.ordinal(),d.getX(),d.getY());
+			//상수객체의 번째수, 상수객체의 x변수값, 상수객체의 y변수값
+		}
 	}
 
 }
