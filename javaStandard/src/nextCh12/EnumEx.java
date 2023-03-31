@@ -1,4 +1,4 @@
-package generics;
+package nextCh12;
 enum Direction { EAST, SOUTH, WEST, NORTH }
 public class EnumEx {
 	

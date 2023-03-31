@@ -1,4 +1,4 @@
-package generics;
+package nextCh12;
 enum Direction2 { 
 EAST(1,">"), SOUTH(5,"v"), WEST(-1,"<"), NORTH(10,"^"); //원하는 값을 괄호에 대입
 //각 enum 상수는 Direction2 클래스의 객체이며 각각 int x, String y를 인스턴스 변수로 가짐

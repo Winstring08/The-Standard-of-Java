@@ -1,4 +1,4 @@
-package generics;
+package nextCh12;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +29,7 @@ class Box<T> {
 		}
 }
 
-public class genericsEx {
+public class GenericsEx {
 
 	public static void main(String[] args) {
 		Box<String> b = new Box<>(); //생성부의 parameterized type 생략 가능
