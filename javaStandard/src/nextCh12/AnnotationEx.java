@@ -40,6 +40,10 @@ public class AnnotationEx{ //TYPE
 		//이 방식으로 클래스에 사용된 애너테이션을 매개변수에 담을 수 있음
 		System.out.println(ma.count()); //1
 		System.out.println(ma.testedBy()); //aaa
+		for(String tt : ma.testTools()) {
+			System.out.println(tt); //JUnit1 //JUnit2
+		}
+		System.out.println(ma.testType()); //FIRST
 		System.out.println(ma.testDate().yymmdd()); //230331
 		//ma.testDate()는 @MyAnnotation내부의 @DateTime 애너테이션이므로
 		//@DateTime 애너테이션의 yymmdd()요소를 반환시키는것
