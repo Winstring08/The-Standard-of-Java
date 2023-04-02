@@ -1,12 +1,11 @@
 package nextCh12;
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
-import java.lang.annotation.Annotation;
+import static java.lang.annotation.ElementType.*;
 //사용하지 않을 경우 ElementType.FIELD로 작성해야 함
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import java.lang.annotation.Annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
+
 enum Alphabet{FIRST,SECOND}
 
 @interface DateTime{
