@@ -1,4 +1,4 @@
-package lambdaStream;
+package functionalInterface;
 @FunctionalInterface 
 interface Lambda{
 	void run();
