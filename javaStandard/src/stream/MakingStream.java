@@ -12,29 +12,33 @@ public class MakingStream {
 		
 		List<Integer> list = Arrays.asList(1,2,3,4,5);
 		//1,2,3,4,5를 요소로 가지는 List 객체를 생성
-		Stream<Integer> intstream = list.stream();
+		Stream<Integer> intS = list.stream();
 		//list를 stream으로 변환한 새로운 객체 반환
-		intstream.forEach(System.out::print); //forEach()최종연산
+		intS.forEach(System.out::print); //forEach()최종연산
 		//스트림의 모든 요소에 System.out의 print()메서드를 실행
 		System.out.println();
 		
-		intstream = list.stream();//다시 최종연산을 하기위해 stream을 새로 생성
-		intstream.forEach(System.out::print);
+		intS = list.stream();//다시 최종연산을 하기위해 stream을 새로 생성
+		intS.forEach(System.out::print);
 		System.out.println();
 		
 		//객체 배열로부터 스트림 생성
 		
 		Stream<String> strStream = Stream.of( "a","b","c" );
+		//"a","b","c"를 요소로 가지는 Stream<String>객체 생성
 		strStream.forEach(System.out::println);
 		
 		Stream<String> strStream2 = Stream.of( new String[] {"a","b","c"} );
+		//new String[] {"a","b","c"}의 요소를 요소로 가지는 Stream<String>객체 생성
 		strStream2.forEach(System.out::println);
 		
 		Stream<String> strStream3 = Arrays.stream( new String[] {"a","b","c"} );
+		//new String[] {"a","b","c"}의 요소를 요소로 가지는 Stream<String>객체 생성
 		strStream3.forEach(System.out::println);
 		
 		String[] arrS = new String[] {"a","b","c"};
 		Stream<String> strStream4 = Arrays.stream( arrS );
+		//arrS의 모든 요소를 요소로 가지는 Stream<String>객체 생성
 		strStream4.forEach(System.out::println);
 		
 		int[] intArr = new int[] {1,2,3,4,5};
@@ -47,6 +51,7 @@ public class MakingStream {
 		//Stream.of()메서드는 기본형 배열을 참조형 스트림을 반환 Stream<Integer>
 		
 		IntStream s = Arrays.stream(intArr);
+		//intArr의 모든 요소를 요소로 가지는 IntStream 반환
 		System.out.println(s.count()); //s의 요소 개수 반환 //최종연산
 		
 		//IntStream만 가진 수를 다루는 유용한 메서드
