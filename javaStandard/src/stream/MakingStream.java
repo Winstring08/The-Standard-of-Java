@@ -2,6 +2,7 @@ package stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -61,6 +62,25 @@ public class MakingStream {
 		
 		s = Arrays.stream(intArr);
 		System.out.println(s.sum()); //s의 모든 요소를 더한 값을 반환
+		
+		IntStream iStream = new Random().ints(); //무한스트림
+		//랜덤한 값을 int값을 가지는 IntStream을 반환
+		iStream.limit(5) //5개만 자르기
+		//중간연산이므로 ;를 사용하지 않고 이어서 작성
+		.forEach(System.out::println); //최종연산
+		
+		iStream = new Random().ints(10,5,10); // 10개만 자르기, 5이상, 10미만범위
+		iStream.forEach(System.out::println);
+		
+		Stream<Integer> intSt = Stream.iterate(0, n-> n+2); //초기값, UnaryOperator
+		//0을 초기값(seed)으로 다음 요소를 n+2로 가지는 스트림 반환
+		intSt.limit(10).forEach(System.out::println);
+		
+		intSt = Stream.generate( ()-> 1 ); // Supplier
+		//모든 요소를 1로 가지는 스트림 반환
+		intSt.limit(5).forEach(System.out::println);
+		
+		intSt = Stream.generate(()-> 1);
 	}
 
 }
