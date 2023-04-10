@@ -27,6 +27,7 @@ public class FlatMapEx {
 				});
 		
 		lineStream.flatMap( s -> Stream.of( s.split(" +") ) )
+		// " +" : 하나 이상의 빈칸을 의미하는 정규식
 		//lineStream의 각각의 요소에 Function을 시행한 반환값인 각각의 Stream을 하나로 합침
 		.map(String::toLowerCase) //소문자화
 		.distinct() 
