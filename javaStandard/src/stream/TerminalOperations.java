@@ -22,7 +22,8 @@ public class TerminalOperations {
 		
 		System.out.println("============");
 		
-		System.out.println( Stream.of(strArr)
+		System.out.println( 
+				Stream.of(strArr)
 				.noneMatch(s->s.length()==0) //모든 요소 s가 조건에 만족하지 않으면 true
 				); 
 		
@@ -62,7 +63,7 @@ public class TerminalOperations {
 		
 		intStream = Stream.of(strArr).mapToInt(String::length);
 		OptionalInt n = IntStream.empty().reduce(Integer::max);
-		//빈 IntStream에 reduce연산 , n은 null이됨
-		System.out.println(n.orElse(0)); //n이 null이면 대신 0을 반환
+		//빈 IntStream에 reduce연산 , n의 값은 null이됨
+		System.out.println(n.orElse(0)); //n의 값이 null이면 대신 0을 반환
 	}
 }
