@@ -28,6 +28,8 @@ public class CollectorEx {
 		//Student[] stuName = stuStream.toArray(); 불가능
 		Object[] stuNames = stuStream.toArray();
 		
+		long count = stuStream.count();
+		count = stuStream.collect(Collectors.counting());
 	}
 
 }
