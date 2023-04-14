@@ -47,15 +47,18 @@ public class CollectorEx {
 				//각요소에 getName메서드 작업 실행한 리턴값들을 요소로 하는 Stream<String>반환
 				.collect(Collectors.toList());
 		//그 Stream<String>을 List로 변환, Set과 Map또한 toSet, toMap이 존재
+		System.out.println(stuList);
 		
 		stuStream = Stream.of(stuArr);	
 		ArrayList<String> stuArrayList = stuStream.map(StudentMember::getName)
 		.collect(Collectors.toCollection(ArrayList::new));
 		//Collection의 경우 toCollection()메서드의 매개변수로 new연산자를 대입
+		System.out.println(stuArrayList);
 		
 		stuStream = Stream.of(stuArr);	
 		stuArr = stuStream.toArray(StudentMember[]::new);
 		//Stream을 배열로 변환 할 때는 toArray()메서드의 매개변수로 해당배열의 new연산자를 대입
+		System.out.println(stuArr);
 		
 		stuStream = Stream.of(stuArr);	
 		Object[] stuArr2 = stuStream.toArray();
@@ -65,32 +68,38 @@ public class CollectorEx {
 		long totalScore = stuStream.mapToInt(StudentMember::getScore).sum();
 		//Stream의 요소에 getScore를 실행하여 리턴된 값을 요소로 하는 
 		//IntStream의 모든 요소의 합
+		System.out.println(totalScore);
 		
 		stuStream = Stream.of(stuArr);	
 		totalScore = stuStream.collect(Collectors.summingInt(StudentMember::getScore));
 		//Stream의 요소에 getScore를 실행하여 리턴된 값을 처리하여 int로 변환
+		System.out.println(totalScore);
 		
 		stuStream = Stream.of(stuArr);	
 		OptionalInt topScore = stuStream.mapToInt(StudentMember::getScore).max();
 		////Stream의 요소에 getScore를 실행하여 리턴된 값을 요소로 하는 
 		//IntStream의 모든 요소중 가장 큰 값
 		//값이 null일수 있기때문에 int대신 OptionalInt사용
+		System.out.println(topScore.getAsInt());
 		
 		stuStream = Stream.of(stuArr);	
 		Optional<StudentMember> topStudent = stuStream
 				.max(Comparator.comparingInt(StudentMember::getScore));
 		//Stream의 요소에 getScore한 값으로 max를 비교 실제로 리턴하는것은 해당 요소
+		System.out.println(topStudent.get());
 		
 		stuStream = Stream.of(stuArr);	
 		topStudent = stuStream
 				.collect(Collectors.maxBy(Comparator.comparingInt(StudentMember::getScore)));
 		//Stream의 요소에 getScore한 값으로 비교하여 가장 큰 값이 나온 요소를 리턴
+		System.out.println(topStudent);
 		
 		IntStream intStream = new Random().ints(1,46).distinct().limit(6);
 		//1~45범위의 랜덤숫자를 요소로 가지는 무한스트림의 중복을 제거하고 6개 잘라냄
 		Optional<Integer> max = intStream.boxed().collect(Collectors.reducing(Integer::max));
 		//intStream을 박싱해서 Stream<Integer>로 만든뒤 [ collect( Collector ) 사용을 위해 ]
 		//가장 큰 요소를 반환하는 BinaryOperator를 매개변수로 가장 큰 Integer를 반환
+		System.out.println(max.get());
 		
 		stuStream = Stream.of(stuArr);	
 		String studentNames = stuStream.map(StudentMember::getName)
